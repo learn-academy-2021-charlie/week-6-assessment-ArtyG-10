@@ -25,11 +25,23 @@ var people = [
 ]
 // Expected output: ["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is a president of the galaxy.", "Arthur Dent is a radio employee."]
 
+// test('aboutEach', () => {
+//   it('takes in an array of objects and returns an array with a sentence about each person with their names capitalized', () =>{
+//     expect(aboutEach(people)).toEqual(["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is a president of the galaxy.", "Arthur Dent is a radio employee."]))
+//   })
+// })
+
 
 
 // b) Create the function that makes the test pass.
 
+const aboutEach = (arr) => {
+  arr.map(value => {
+    console.log(((value.name.split(' '))[0].substr(0,1).toUpperCase()) + ((value.name.split(' '))[0].substr(1)))
+  })
+}
 
+aboutEach(people)
 
 // --------------------2) Create a function that takes in a mixed data array and returns an array of only the REMAINDERS of the numbers when divided by 3.
 

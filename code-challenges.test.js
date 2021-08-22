@@ -87,6 +87,23 @@ var cubeAndSum1 = [2, 3, 4]
 var cubeAndSum2 = [0, 5, 10]
 // Expected output: 1125
 
-
+describe('sumCubed', () => {
+  it('takes in an array of numbers and returns the sum of all the numbers cubed', () => {
+    expect(sumCubed(cubeAndSum1)).toEqual(99)
+    expect(sumCubed(cubeAndSum2)).toEqual(1125)
+  })
+})
 
 // b) Create the function that makes the test pass.
+
+//variale for the sum
+//forEach to cycle through the array elements and cube them
+//using += variable is updated with the sum of elements cubed
+
+const sumCubed = (numArr) => {
+  let arrSum = 0
+  numArr.forEach(value => {
+    arrSum += value ** 3
+  })
+  return arrSum
+}

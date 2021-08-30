@@ -1,0 +1,27 @@
+Arguments: 
+  /usr/local/Cellar/node/16.4.1/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js add jest
+
+PATH: 
+  /Users/learnacademy/.rvm/gems/ruby-3.0.0/bin:/Users/learnacademy/.rvm/gems/ruby-3.0.0@global/bin:/Users/learnacademy/.rvm/rubies/ruby-3.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/learnacademy/.rvm/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  16.4.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:71:26)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -25,10 +25,28 @@ var people = [
 ]
 // Expected output: ["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is a president of the galaxy.", "Arthur Dent is a radio employee."]
 
+describe('nameAndOccupation', () => {
+  it('takes in an array of objects and returns an array with a sentence about each person with their names capitalized', () => {
+    expect(nameAndOccupation(people)).toEqual(["Ford Prefect is a hitchhiker.", "Zaphod Beeblebrox is a president of the galaxy.", "Arthur Dent is a radio employee."])
+  })
+})
+
 
 
 // b) Create the function that makes the test pass.
 
+//Create func that will take in an array of objects
+//map through the objects and access the names by value.name
+//split at the ' ' to isolate first and last names which can then be accessed by index
+//substr the first letter to use toUpperCase and then add the rest of the string back
+//add string interpolation for the occupation ${value.occupation}
+
+const nameAndOccupation = (arr) => {
+  return arr.map(value => {
+     return(((value.name.split(' '))[0].substr(0,1).toUpperCase()) + ((value.name.split(' '))[0].substr(1))
+     + ' ' + ((value.name.split(' '))[1].substr(0,1).toUpperCase()) + ((value.name.split(' '))[1].substr(1)) + ` is a ${value.occupation}.`)
+  })
+}
 
 
 // --------------------2) Create a function that takes in a mixed data array and returns an array of only the REMAINDERS of the numbers when divided by 3.
@@ -40,11 +58,25 @@ var hodgepodge1 = [23, "Heyyyy!", 45, -10, 0, "Yo", false]
 var hodgepodge2 = [5, "Hola", 43, -34, "greetings", true]
 // Expected output: [ 2, 1, -1 ]
 
-
+describe('modulo3', () => {
+  it('takes in a mixed data array and returns an array of only the REMAINDERS of the numbers when divided by 3', () => {
+    expect(modulo3(hodgepodge1)).toEqual([ 2, 0, -1, 0 ])
+    expect(modulo3(hodgepodge2)).toEqual([ 2, 1, -1 ])
+  })
+})
 
 // b) Create the function that makes the test pass.
 
+//filter for numbers in array with .filter and typeof
+//.map to modulo each value by three
 
+const modulo3= (mixedArr) => {
+  return mixedArr.filter(value => {
+    return typeof value == 'number'
+  }).map(value => {
+    return value % 3
+  })
+}
 
 // --------------------3) Create a function that takes in an array of numbers and returns the sum of all the numbers cubed.
 
@@ -55,6 +87,23 @@ var cubeAndSum1 = [2, 3, 4]
 var cubeAndSum2 = [0, 5, 10]
 // Expected output: 1125
 
-
+describe('sumCubed', () => {
+  it('takes in an array of numbers and returns the sum of all the numbers cubed', () => {
+    expect(sumCubed(cubeAndSum1)).toEqual(99)
+    expect(sumCubed(cubeAndSum2)).toEqual(1125)
+  })
+})
 
 // b) Create the function that makes the test pass.
+
+//variale for the sum
+//forEach to cycle through the array elements and cube them
+//using += variable is updated with the sum of elements cubed
+
+const sumCubed = (numArr) => {
+  let arrSum = 0
+  numArr.forEach(value => {
+    arrSum += value ** 3
+  })
+  return arrSum
+}
